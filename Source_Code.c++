@@ -30,7 +30,7 @@ int main()
     cout<<"\n Quantity of Chicken-Roll: ";
     cin>>Qchicken;
 
-    m;
+    m:
     cout<<"\n\t\t\t Please select from the menu options ";
     cout<<"\n\n1) Rooms";
     cout<<"\n2 Pasta";
