@@ -104,7 +104,7 @@ int main()
         if (Qnoodles-Snoodles>=quant)
         {
             Snoodles=Snoodles+quant;
-            Total_noodles= Total_noodles+(quant*1200);
+            Total_noodles= Total_noodles+(quant*140);
             cout<<"\n\n\t\t"<<quant<<"Noodles is the order! ";
 
         }
@@ -121,7 +121,7 @@ int main()
         if (Qshake-Sshake>=quant)
         {
             Sshake=Sshake+quant;
-            Total_shake= Total_shake+(quant*1200);
+            Total_shake= Total_shake+(quant*120);
             cout<<"\n\n\t\t"<<quant<<"Shake is the order! ";
 
         }
@@ -138,7 +138,7 @@ int main()
         if (Qchicken-Schicken>=quant)
         {
             Schicken=Schicken+quant;
-            Total_chicken= Total_chicken+(quant*1200);
+            Total_chicken= Total_chicken+(quant*150);
             cout<<"\n\n\t\t"<<quant<<"Chicken-Roll is the order! ";
 
         }
