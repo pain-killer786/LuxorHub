@@ -93,7 +93,7 @@ int main()
         if (Qburger-Sburger>=quant)
         {
             Sburger=Sburger+quant;
-            Total_burger= Total_burger+(quant*1200);
+            Total_burger= Total_burger+(quant*100);
             cout<<"\n\n\t\t"<<quant<<" Burger is the order! ";
 
         }
@@ -186,17 +186,17 @@ int main()
         cout<<"\n\n Number of Chicken-Rolls we had : "<<Qchicken;
         cout<<"\n\n Number of Chicken-Rolls we sold "<<Schicken;
         cout<<"\n\n Remaining Chicken-Rolls : "<<Qchicken-Schicken;
-        cout<<"\n\n Total Chicken-Rolls collection for the day : "<<Total_chicken;
+        cout<<"\n\n Total Chicken-Rolls collection for the day : "<<Total_chicken<<endl;
 
         break;
 
         case 8:
         
-        cout<<"Thank You for visiting us"<<endl;
+        cout<<"\nThank You for visiting us!"<<endl;
         exit(0);
         
         default:
-        cout<<"\n Please select the numbers mentioned above! ";
+        cout<<"\n Please select the numbers mentioned above! "<<endl;
     }
     goto m;
 
