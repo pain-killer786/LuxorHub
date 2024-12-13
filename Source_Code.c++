@@ -21,13 +21,13 @@ int main()
     cin>>Qrooms;
     cout<<"\n Quantity of pasta: ";
     cin>>Qpasta;
-    cout<<"\n Quantity of burger: ";
+    cout<<"\n Quantity of Burger: ";
     cin>>Qburger;
-    cout<<"\n Quantity of noodles: ";
+    cout<<"\n Quantity of Noodles: ";
     cin>>Qnoodles;
-    cout<<"\n Quantity of shake: ";
+    cout<<"\n Quantity of Shake: ";
     cin>>Qshake;
-    cout<<"\n Quantity of chicken-roll: ";
+    cout<<"\n Quantity of Chicken-Roll: ";
     cin>>Qchicken;
 
 
@@ -147,6 +147,41 @@ int main()
             cout<<"\n\tOnly"<<Qchicken-Sburger<<"Chicken remaining in hotel ";
         }    
     break;
+
+    case 7:
+
+    cout<<"\n\t\tDetails of sales and collection ";
+
+    cout<<"\n\n Number of rooms we had : "<<Qrooms;
+    cout<<"\n\n Number of rooms we gave for rent "<<Srooms;
+    cout<<"\n\n Remaining rooms : "<<Qrooms-Srooms;
+    cout<<"\n\n Total rooms collection for the day : "<<Total_rooms;
+
+    cout<<"\n\n Number of Pasta we had : "<<Qpasta;
+    cout<<"\n\n Number of Pasta we gave for rent "<<Spasta;
+    cout<<"\n\n Remaining Pasta : "<<Qpasta-Spasta;
+    cout<<"\n\n Total Pasta collection for the day : "<<Total_pasta;
+
+    cout<<"\n\n Number of Burger we had : "<<Qburger;
+    cout<<"\n\n Number of Burger we gave for rent "<<Sburger;
+    cout<<"\n\n Remaining Burger : "<<Qburger-Sburger;
+    cout<<"\n\n Total Burger collection for the day : "<<Total_burger;
+
+    cout<<"\n\n Number of Noodles we had : "<<Qnoodles;
+    cout<<"\n\n Number of Noodles we gave for rent "<<Snoodles;
+    cout<<"\n\n Remaining Noodles : "<<Qnoodles-Snoodles;
+    cout<<"\n\n Total Noodles collection for the day : "<<Total_noodles;
+
+    cout<<"\n\n Number of Shake we had : "<<Qshake;
+    cout<<"\n\n Number of Shake we gave for rent "<<Sshake;
+    cout<<"\n\n Remaining Shake : "<<Qshake-Sshake;
+    cout<<"\n\n Total Shake collection for the day : "<<Total_shake;
+
+    cout<<"\n\n Number of Chicken-Rolls we had : "<<Qchicken;
+    cout<<"\n\n Number of Chicken-Rolls we gave for rent "<<Schicken;
+    cout<<"\n\n Remaining Chicken-Rolls : "<<Qchicken-Schicken;
+    cout<<"\n\n Total Chicken-Rolls collection for the day : "<<Total_chicken;
+    
 
     
         
