@@ -41,6 +41,69 @@ int main()
     cout<<"\n7 Information regarding sales and collection";
     cout<<"\n8 Exit";
 
+    cout<<"\n\n Please Enter your choice! ";
+    cin>>choice;
+
+    switch (choice)
+    {
+    case 1:
+        cout<<"\n\n Enter the number of rooms you want: ";
+
+        cin>>quant;
+        if (Qrooms-Srooms >=quant)
+        {
+            Srooms=Srooms+quant;
+            Total_rooms= Total_rooms+(quant *1200);
+            cout<<"\n\n\t\t"<<quant<<"room/rooms have been alloted to you! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qrooms-Srooms<<"Rooms remaining in hotel ";
+        }    
+    break;
+
+    case 2:
+        cout<<"\n\n Enter Pasta Quantity: ";
+
+        cin>>quant;
+        if (Qpasta-Spasta >=quant)
+        {
+            Spasta=Spasta+quant;
+            Total_pasta= Total_pasta+(quant *250);
+            cout<<"\n\n\t\t"<<quant<<" Pasta is the order! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qpasta-Spasta<<"Pasta remaining in hotel ";
+        }    
+    break;
+
+    case 3:
+        cout<<"\n\n Enter Burger Quantity: ";
+
+        cin>>quant;
+        if (Qburger-Sburger>=quant)
+        {
+            Sburger=Sburger+quant;
+            Total_burger= Total_burger+(quant*1200);
+            cout<<"\n\n\t\t"<<quant<<"Burger is the order! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qburger-Sburger<<"Burger remaining in hotel ";
+        }    
+    break;
+
+    
+        
+    
+    default:
+        break;
+    }
+
     return 0;
 
 
