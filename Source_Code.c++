@@ -97,6 +97,57 @@ int main()
         }    
     break;
 
+    case 4:
+        cout<<"\n\n Enter Noodles Quantity: ";
+
+        cin>>quant;
+        if (Qnoodles-Snoodles>=quant)
+        {
+            Snoodles=Snoodles+quant;
+            Total_noodles= Total_noodles+(quant*1200);
+            cout<<"\n\n\t\t"<<quant<<"Noodles is the order! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qnoodles-Snoodles<<"Noodles remaining in hotel ";
+        }
+    break;
+
+    case 5:
+        cout<<"\n\n Enter Shake Quantity: ";
+
+        cin>>quant;
+        if (Qshake-Sshake>=quant)
+        {
+            Sshake=Sshake+quant;
+            Total_shake= Total_shake+(quant*1200);
+            cout<<"\n\n\t\t"<<quant<<"Shake is the order! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qshake-Sshake<<"Shake remaining in hotel ";
+        }    
+    break;
+
+    case 6:
+        cout<<"\n\n Enter Chicken-Roll Quantity: ";
+
+        cin>>quant;
+        if (Qchicken-Schicken>=quant)
+        {
+            Schicken=Schicken+quant;
+            Total_chicken= Total_chicken+(quant*1200);
+            cout<<"\n\n\t\t"<<quant<<"Chicken-Roll is the order! ";
+
+        }
+        else
+        {
+            cout<<"\n\tOnly"<<Qchicken-Sburger<<"Chicken remaining in hotel ";
+        }    
+    break;
+
     
         
     
