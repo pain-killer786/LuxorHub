@@ -6,3 +6,7 @@ Manager
 Jhuma
 CEO
 20000
+1001
+
+
+20000

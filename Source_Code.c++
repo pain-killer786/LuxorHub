@@ -8,6 +8,11 @@ using namespace std;
 
 const int MAX = 100; // Maximum number of rooms
 
+// Admin Password for Secure Access
+const string EMPLOYEE_ADMIN_PASSWORD = "employee@123";
+const string HOTEL_ADMIN_PASSWORD = "hotel@123";
+const string RESTAURANT_ADMIN_PASSWORD = "restaurant@123";
+
 // Employee Class
 class Employee
 {
@@ -156,6 +161,23 @@ public:
     friend void employeeAdminPanel(Employee &employeeManager);
 };
 
+bool validateEmployeeAdmin()
+{
+    string password;
+    cout << "Enter Admin Password: ";
+    cin >> password;
+    if (password == EMPLOYEE_ADMIN_PASSWORD)
+    {
+        cout << "Access Granted!\n";
+        return true;
+    }
+    else
+    {
+        cout << "Invalid Password. Access Denied.\n";
+        return false;
+    }
+}
+
 void employeeAdminPanel(Employee &employeeManager)
 {
     int adminChoice;
@@ -174,6 +196,8 @@ void employeeAdminPanel(Employee &employeeManager)
         {
         case 1:
         {
+            if (!validateEmployeeAdmin())
+                return;
             int id;
             string name, position;
             double salary;
@@ -190,11 +214,15 @@ void employeeAdminPanel(Employee &employeeManager)
             break;
         }
         case 2:
+            if (!validateEmployeeAdmin())
+                return;
             employeeManager.calculatePayroll();
             break;
 
         case 3:
         {
+            if (!validateEmployeeAdmin())
+                return;
             int id;
             cout << "Enter Employee ID to Delete: ";
             cin >> id;
@@ -203,6 +231,8 @@ void employeeAdminPanel(Employee &employeeManager)
         }
         case 4:
         {
+            if (!validateEmployeeAdmin())
+                return;
             string name;
             cout << "Enter Name or Part of Name to Search: ";
             cin.ignore();
@@ -507,6 +537,107 @@ public:
     }
 };
 
+bool validateHotelAdmin()
+{
+    string password;
+    cout << "Enter Admin Password: ";
+    cin >> password;
+    if (password == HOTEL_ADMIN_PASSWORD)
+    {
+        cout << "Access Granted!\n";
+        return true;
+    }
+    else
+    {
+        cout << "Invalid Password. Access Denied.\n";
+        return false;
+    }
+}
+
+void hotelAdminPanel(Hotel &hotel)
+{
+    int adminChoice;
+    do
+    {
+        cout << "\n--- Hotel Admin Panel ---\n";
+        cout << "1. Add Room\n"; //
+        cout << "2. Search Room\n";
+        cout << "3. Display Room\n";
+        cout << "4. Get Available Rooms\n"; //
+        cout << "5. Search Customer\n";
+        cout << "6. Guest Summary Report\n";
+        cout << "7. Exit Admin Panel\n";
+        cout << "Enter your choice: ";
+        cin >> adminChoice;
+
+        switch (adminChoice)
+        {
+        case 1:
+        {
+            if (!validateHotelAdmin())
+                return;
+            int roomNo;
+            cout << "Enter Room Number to Add: ";
+            cin >> roomNo;
+            hotel.addRoom(roomNo);
+            break;
+        }
+        case 2:
+        {
+            if (!validateHotelAdmin())
+                return;
+            int roomNo;
+            cout << "Enter Room Number to Search: ";
+            cin >> roomNo;
+            hotel.searchRoom(roomNo);
+            break;
+        }
+        case 3:
+        {
+            if (!validateHotelAdmin())
+                return;
+            int roomNo;
+            cout << "Enter Room Number to Display: ";
+            cin >> roomNo;
+            hotel.displayRoom(roomNo);
+            break;
+        }
+
+        case 4:
+        {
+            if (!validateHotelAdmin())
+                return;            
+            hotel.getAvailRooms();
+            break;
+        }
+        case 5:
+        {
+            if (!validateHotelAdmin())
+                return;
+            char name[100];
+            cout << "Enter Customer Name to Search: ";
+            cin.ignore();
+            cin.getline(name, 100);
+            hotel.searchCustomer(name);
+            break;
+        }
+        case 6:
+        {
+            if (!validateHotelAdmin())
+                return;
+            hotel.guestSummaryReport();
+            break;
+        }
+        case 7:
+            cout<<"Exiting Admin Panel\n";
+            break;
+
+        default:
+            cout<<"Invalid Choice. Please try again.\n";
+        }
+    } while (adminChoice != 7);
+}
+
 class Restaurant
 {
 private:
@@ -662,10 +793,27 @@ public:
     }
 
     // Friend Function for Administrative access
-    friend void adminPanel(Restaurant &restaurant);
+    friend void restauranrAdminPanel(Restaurant &restaurant);
 };
 
-void adminPanel(Restaurant &restaurant)
+bool validateRestaurantAdmin()
+{
+    string password;
+    cout << "Enter Admin Password: ";
+    cin >> password;
+    if (password == RESTAURANT_ADMIN_PASSWORD)
+    {
+        cout << "Access Granted!\n";
+        return true;
+    }
+    else
+    {
+        cout << "Invalid Password. Access Denied.\n";
+        return false;
+    }
+}
+
+void restauranrAdminPanel(Restaurant &restaurant)
 {
     int adminChoice;
     do
@@ -681,6 +829,8 @@ void adminPanel(Restaurant &restaurant)
         {
         case 1:
         {
+            if (!validateRestaurantAdmin())
+                return;
             string name;
             double price;
             int quantity;
@@ -695,9 +845,12 @@ void adminPanel(Restaurant &restaurant)
             break;
         }
         case 2:
+        {
+            if (!validateRestaurantAdmin())
+                return;
             restaurant.displayTotalSales();
             break;
-
+        }
         case 3:
             cout << "Exiting Admin Panel.\n";
             break;
@@ -766,15 +919,10 @@ int main()
             do
             {
                 cout << "\n--- Hotel Management ---\n";
-                cout << "1. Add Room\n"; //
-                cout << "2. Search Room\n";
-                cout << "3. Display Room\n";
-                cout << "4. Get Available Rooms\n";  //
-                cout << "5. Search Customer\n";      //
-                cout << "6. Check In\n";             //
-                cout << "7. Check Out\n";            //
-                cout << "8. Guest Summary Report\n"; //
-                cout << "9. Back to Main Menu\n";    //
+                cout << "1. Admin Panel\n";
+                cout << "2. Check In\n";             //
+                cout << "3. Check Out\n";            //
+                cout << "4. Back to Main Menu\n";    //
                 cout << "Enter your choice: ";
                 cin >> hotelChoice;
 
@@ -782,45 +930,13 @@ int main()
                 {
                 case 1:
                 {
-                    int roomNo;
-                    cout << "Enter Room Number to Add: ";
-                    cin >> roomNo;
-                    hotelManager.addRoom(roomNo);
+                    hotelAdminPanel(hotelManager); //Restricted Access
                     break;
                 }
                 case 2:
-                {
-                    int roomNo;
-                    cout << "Enter Room Number to Search: ";
-                    cin >> roomNo;
-                    hotelManager.searchRoom(roomNo);
-                    break;
-                }
-                case 3:
-                {
-                    int roomNo;
-                    cout << "Enter Room Number to Display: ";
-                    cin >> roomNo;
-                    hotelManager.displayRoom(roomNo);
-                    break;
-                }
-
-                case 4:
-                    hotelManager.getAvailRooms();
-                    break;
-                case 5:
-                {
-                    char name[100];
-                    cout << "Enter Customer Name to Search: ";
-                    cin.ignore();
-                    cin.getline(name, 100);
-                    hotelManager.searchCustomer(name);
-                    break;
-                }
-                case 6:
                     hotelManager.checkIn();
                     break;
-                case 7:
+                case 3:
                 {
                     int roomNo;
                     cout << "Enter Room Number to Check Out: ";
@@ -828,16 +944,13 @@ int main()
                     hotelManager.checkOut(roomNo);
                     break;
                 }
-                case 8:
-                    hotelManager.guestSummaryReport();
-                    break;
-                case 9:
+                case 4:
                     cout << "Returning to Main Menu.\n";
                     break;
                 default:
                     cout << "Invalid choice. Please try again.\n";
                 }
-            } while (hotelChoice != 9);
+            } while (hotelChoice != 4);
             break;
         }
         case 3:
@@ -856,7 +969,7 @@ int main()
                 switch (restaurantChoice)
                 {
                 case 1:
-                    adminPanel(restaurantManager); // Restricted Access
+                    restauranrAdminPanel(restaurantManager); // Restricted Access
                     break;
                 case 2:
                     restaurantManager.displayMenu();
